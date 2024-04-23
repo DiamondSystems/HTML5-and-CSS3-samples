@@ -1,0 +1,14 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+/* 
+ * Header
+ */
+body > header {
+    padding: 20px 20px 100px;
+}
+body > header > nav > a {
+    font-size: 20px;
+}

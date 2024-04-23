@@ -3,11 +3,179 @@
 <head>
     <meta charset="utf-8">
     <title>Трансформации в CSS3</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        /*  */
+        section {
+            margin-bottom: 100px;
+        }
+        div.rotate {
+            background-color: #ccc;
+            width: 200px;
+            height: 200px;
+            margin:5px;
+            padding: 40px 10px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+        .point {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: red;
+        }
+        /* ROTATE */
+        .rotated1 {
+            transform: rotate(30deg);
+            background-color: yellow !important;
+        }
+        .rotated2 {
+            transform: rotate(-30deg);
+            background-color: orange !important;
+        }
+        /* SCALE */
+        .scale1 {
+            transform: scale(2);
+            background-color: yellow !important;
+        }
+        .scale2 {
+            transform: scale(0.5);
+            background-color: orange !important;
+        }
+        .scale3 {
+            transform: scale(1.5, 0.8);
+            background-color: aqua !important;
+        }
+        .scale4 {
+            transform: scaleX(1.4);
+            background-color: green !important;
+        }
+        .scale5 {
+            transform: scale(-1.2);
+            background-color: brown !important;
+        }
+        /* TRANSLATE */
+        .translate1 {
+            background-color: yellow !important;
+            transform: translate(50px, 30px);
+        }
+        .translate2 {
+            background-color: orange !important;
+            transform: translateX(16px);
+            transform: translateY(-2.5em);
+        }
+        /* SKEW */
+        .skew1 {
+            background-color: yellow !important;
+            transform: skew(45deg, 0);
+        }
+        .skew2 {
+            background-color: orange !important;
+            transform: translateX(16px);
+            transform: skewX(60deg);
+            transform: skewY(-30deg);
+        }
+        /* TRANSFORM ORIGIN */
+        .transformOrigin {
+            position: relative;
+            padding: 0 !important;
+            z-index: 1000;
+        }
+        .transformOrigin .point {
+            position: absolute;
+            z-index: 2000;
+        }
+        .transformOrigin1 .point {
+            top: 50%;
+            left: 50%;
+        }
+        .transformOrigin2 .point {
+            top: 0;
+            left: 0;
+        }
+        .transformOrigin3 .point {
+            right: 0;
+            bottom: 0;
+        }
+        .transformOrigin > div {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .transformOrigin1 > div {
+            transform: rotate(-45deg);
+        }
+        .transformOrigin2 > div {
+            transform-origin: left top;
+            transform: rotate(-45deg);
+        }
+        .transformOrigin3 > div {
+            transform-origin: right bottom;
+            transform: rotate(-45deg);
+        }
+        /* Combining transformations */
+        .transformCombining {
+            transform: translate(50px, 100px) skew(30deg, 10deg) scale(1.5) rotate(90deg);
+            background-color: orange !important;
+        }
     </style>
 </head>
 <body>
-    <!--  -->
+    <!-- Header -->
+    <header><nav><a href="/"><< Главная</a></nav></header>
+
+    <!-- Rotate -->
+    <section>
+        <h2>Вращение (Rotate)</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate rotated1">Block 2: rotate(30deg)</div>
+        <div class="rotate">Block 3</div>
+        <div class="rotate rotated2">Block 4: rotate(-30deg)</div>
+    </section>
+
+    <!-- Scale -->
+    <section>
+        <h2>Масштабирование (Scale)</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate scale1">Block 2: scale(2)</div>
+        <div class="rotate">Block 3</div>
+        <div class="rotate scale2">Block 4: <br>scale(0.5)</div>
+        <div class="rotate scale3">Block 5: <br>scale(1.5, 0.8)</div>
+        <div class="rotate scale4">Block 6: <br>scaleX(1.4)</div>
+        <div class="rotate scale5">Block 7: <br>scaleX(-1.2)</div>
+    </section>
+
+    <!-- Translate -->
+    <section>
+        <h2>Перемещение (Translate)</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate translate1">Block 2: translate(50px, 30px)</div>
+        <div class="rotate translate2">Block 3: translateX(16px), translateY(-2.5em)</div>
+    </section>
+
+    <!-- Skew -->
+    <section>
+        <h2>Наклон (Skew)</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate skew1">Block 2: skew(45deg, 0)</div>
+        <div class="rotate skew2">Block 3: skewX(60deg), skewY(-30deg)</div>
+    </section>
+
+    <!-- Transform Origin -->
+    <section>
+        <h2>Исходная точка трансформации (Transform Origin)</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate transformOrigin transformOrigin1"><span class="point"></span><div class="skeletonTransformOrigin">Block 2: center</div></div>
+        <div class="rotate transformOrigin transformOrigin2"><span class="point"></span><div class="skeletonTransformOrigin">Block 3: left top</div></div>
+        <div class="rotate transformOrigin transformOrigin3"><span class="point"></span><div class="skeletonTransformOrigin">Block 4: right bottom</div></div>
+    </section>
+    
+    <!-- Combining transformations -->
+    <section>
+        <h2>Комбинирование преобразований</h2>
+        <div class="rotate">Block 1</div>
+        <div class="rotate transformCombining">Block 2: Combining transformations</div>
+    </section>
 </body>
 </html>
