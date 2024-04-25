@@ -5,13 +5,228 @@
     <title>Анимация в CSS3</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /*  */
+        section {
+            margin-bottom: 100px;
+        }
+        div.animation {
+            background-color: #ccc;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+        /* ANIMATION 1 */
+        @keyframes backgroundColorAnimation {
+            from {
+                background-color: red;
+                opacity: 0.2;
+            }
+            to {
+                background-color: blue;
+                opacity: 0.9;
+            }
+        }
+        @keyframes sizeAnimation {
+            to {
+                height: 150px;
+            }
+        }
+        .animationS1 {
+            animation-name: backgroundColorAnimation;
+            animation-duration: 2s;
+        }
+        .animationS2:hover {
+            animation-name: backgroundColorAnimation, sizeAnimation;
+            animation-duration: 2s;
+        }
+        /* A LOT OF KEY FRAMES */
+        @keyframes backgroundColorAnimationFrames {
+            from {
+                background-color: red;
+            }
+            25%{
+                background-color: yellow;
+            }
+            50%{
+                background-color: green;
+            }
+            75%{
+                background-color: blue;
+            }
+            to {
+                background-color: violet;
+            }
+        }
+        .keyFrames:hover {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 1500ms;
+        }
+        /* COMPLETING THE ANIMATION */
+        .completingAnimation1 {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 1500ms;
+            animation-iteration-count: 3; /* или "infinite" для  бесконечное количество раз */
+        }
+        .completingAnimation2 {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 1500ms;
+            animation-iteration-count: 3;
+            animation-fill-mode: forwards;
+        }
+        .completingAnimation3 {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 1500ms;
+            animation-iteration-count: infinite; /* или N (число) количество раз */
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+        /* ANIMATION DELAY */
+        .animationDelay1 {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+        /* ANIMATION SMOOTHNESS */
+        .animationSmoothness {
+            animation-name: backgroundColorAnimationFrames;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        .animationSmoothness1 {
+            animation-timing-function: linear;
+        }
+        .animationSmoothness2 {
+            animation-timing-function: ease;
+        }
+        .animationSmoothness3 {
+            animation-timing-function: ease-in;
+        }
+        .animationSmoothness4 {
+            animation-timing-function: ease-out;
+        }
+        .animationSmoothness5 {
+            animation-timing-function: ease-in-out;
+        }
+        .animationSmoothness6 {
+            animation-timing-function: cubic-bezier(0.5, 0.6, 0.24, 18);
+        }
+        /* ANIMATION UNIVERSAL */
+        .animationUniversal {
+            /* animation-name: backgroundColorAnimation;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 3;
+            animation-direction: alternate;
+            animation-delay: 1s;
+            animation-fill-mode: forwards; */
+            animation: backgroundColorAnimation 5s ease-in-out 3 alternate 1s forwards;
+        }
+        /* ANIMATION BANNER */
+        @keyframes text1 {
+            10%{opacity: 1;}
+            40%{opacity: 0;}
+        }  
+        @keyframes text2 {
+            30%{opacity: 0;}
+            60%{opacity:1;}
+        }
+        @keyframes banner {
+            10%{background-color: #008978;}
+            40%{background-color: #34495e;}
+            80%{background-color: green;}
+        }
+        .banner {
+            width: 600px;
+            height: 120px;
+            background-color: #777;
+            margin: 0 auto;
+            position: relative;
+        }
+        .text1,.text2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 120px;
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            opacity: 0;
+        }
+        .text1 {
+            animation : text1 6s infinite;
+        }
+        .text2 {
+            animation : text2 6s infinite;
+        }
+        .animated {
+            opacity: 0.8;
+            position: absolute;
+            width: 100%;
+            height: 100%;  
+            background-color: #34495e;
+            animation: banner 6s infinite;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Animation 1 -->
+    <section>
+        <h2>Анимация</h2>
+        <div class="animation animationS1">Block 1</div>
+        <div class="animation animationS2">Block 2<br><br>Также, можно навести курсор</div>
+    </section>
+
+    <!-- A lot of key frames -->
+    <section>
+        <h2>Множество ключевых кадров</h2>
+        <div class="animation keyFrames">Block 1<br><br>Также, можно навести курсор</div>
+    </section>
+
+    <!-- Completing the animation -->
+    <section>
+        <h2>Завершение анимации</h2>
+        <div class="animation completingAnimation1">Block 1: animation-iteration-count: 3</div>
+        <div class="animation completingAnimation2">Block 2: animation-fill-mode: forwards</div>
+        <div class="animation completingAnimation3">Block 3: animation-direction: alternate</div>
+    </section>
+
+    <!-- Animation delay -->
+    <section>
+        <h2>Задержка анимации</h2>
+        <div class="animation animationDelay1">Block 1: animation-delay: 1s;</div>
+    </section>
+    
+    <!-- Animation smoothness function -->
+    <section>
+        <h2>Функция плавности анимации</h2>
+        <div class="animation animationSmoothness animationSmoothness1">Block 1: linear</div>
+        <div class="animation animationSmoothness animationSmoothness2">Block 2: ease</div>
+        <div class="animation animationSmoothness animationSmoothness3">Block 3: ease-in</div>
+        <div class="animation animationSmoothness animationSmoothness4">Block 4: ease-out</div>
+        <div class="animation animationSmoothness animationSmoothness5">Block 5: ease-in-out</div>
+        <div class="animation animationSmoothness animationSmoothness6">Block 6: cubic-bezier</div>
+    </section>
+
+    <!-- Animation delay -->
+    <section>
+        <h2>Свойство animation</h2>
+        <div class="animation animationUniversal">Block 1: Universal;</div>
+    </section>
+
+    <!-- Creating a banner with animation -->
+    <section>
+        <h2>Создание баннера с анимацией</h2>
+        <div class="banner">
+            <div class="animated">
+                <div class="text1">HTML5 И CSS3</div>
+                <div class="text2">ЭТО ПРОСТО СУПЕР!</div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
