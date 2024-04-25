@@ -5,16 +5,123 @@
     <title>flex-wrap</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /*  */
+        .flex-container {
+            display: flex;
+            border: solid 0.25em #000;
+            width: 500px;
+            height: 8.25em;
+        }
+        .flex-item {
+            min-width: 110px;
+            text-align: center;
+            font-size: 1em;
+            padding: 1.5em;
+            color: white;
+            opacity: 0.8;
+        }
+        .color1 {background-color: #675BA7;}
+        .color2 {background-color: #9BC850;}
+        .color3 {background-color: #A62E5C;}
+        .color4 {background-color: #2A9FBC;}
+        .color5 {background-color: #F15B2A;}
+
+        /* DIRECTIONS */
+        .row {
+            flex-direction: row;
+        }
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+        
+        /* WRAPs */
+        .flex-container-nowrap {
+            flex-wrap: nowrap;
+        }
+        .flex-container-wrap {
+            flex-wrap: wrap;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Row + nowrap -->
     <section>
-        <h2></h2>
+        <h2>Row + nowrap</h2>
+        <div class="flex-container flex-container-nowrap row">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
+    </section>
+
+    <!-- Row-reverse + nowrap -->
+    <section>
+        <h2>Row-reverse + wrap</h2>
+        <div class="flex-container flex-container-nowrap row-reverse">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
+    </section>
+
+    <!-- Row + wrap -->
+    <section>
+        <h2>Row + nowrap</h2>
+        <div class="flex-container flex-container-wrap row">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
+    </section>
+
+    <!-- Row-reverse + wrap -->
+    <section>
+        <h2>Row-reverse + wrap</h2>
+        <div class="flex-container flex-container-wrap row-reverse">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
+    </section>
+
+    <!-- Column + wrap -->
+    <section>
+        <h2>Column + nowrap</h2>
+        <div class="flex-container flex-container-wrap column">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
+    </section>
+
+    <!-- Column-reverse + wrap -->
+    <section>
+        <h2>Column-reverse + wrap</h2>
+        <div class="flex-container flex-container-wrap column-reverse">
+            <div class="flex-item color1">Flex Item 1</div>
+            <div class="flex-item color2">Flex Item 2</div>
+            <div class="flex-item color3">Flex Item 3</div>
+            <div class="flex-item color4">Flex Item 4</div>
+            <div class="flex-item color5">Flex Item 5</div>
+        </div>
     </section>
 </body>
 </html>
