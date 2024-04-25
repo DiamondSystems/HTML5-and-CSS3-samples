@@ -5,13 +5,129 @@
     <title>Переход в CSS3</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /*  */
+        section {
+            margin-bottom: 100px;
+        }
+        div.transition {
+            background-color: #ccc;
+            width: 200px;
+            height: 200px;
+            margin:5px;
+            padding: 40px 10px;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            display: inline-block;
+        }
+        /* TRANSITION PROPERTY */
+        .transition1 {
+            transition-property: background-color;
+            transition-duration: 800ms;
+        }
+        .transition1:hover {
+            background-color: red;
+        }
+        .transition2 {
+            transition-property: background-color, width, height, border-color;
+            transition-duration: 2s;
+        }
+        .transition2:hover{
+            background-color: red;
+            width: 120px;
+            height: 120px;
+            border-color: blue;
+        }
+        .transition3 {
+            transition-property: background-color, width, height, border-color;
+            transition-duration: 2s, 3s, 1s, 2s;
+        }
+        .transition3:hover{
+            background-color: orange;
+            width: 120px;
+            height: 120px;
+            border-color: green;
+        }
+        /* TRANSITION ANIMATION */
+        .tAnimation {
+            transition-property: background-color, width;
+            transition-duration: 2s, 10s;
+        }
+        .tAnimation:hover {
+            background-color: red;
+            width: 200px;
+        }
+        .tAnimation1 {
+            transition-timing-function: linear;
+        }
+        .tAnimation2 {
+            transition-timing-function: ease;
+        }
+        .tAnimation3 {
+            transition-timing-function: ease-in;
+        }
+        .tAnimation4 {
+            transition-timing-function: ease-out;
+        }
+        .tAnimation5 {
+            transition-timing-function: ease-in-out;
+        }
+        .tAnimation6 {
+            transition-timing-function: cubic-bezier(0.5, 0.6, 0.24, 18);
+        }
+        /* TRANSITION DELAY */
+        .delay1 {
+            transition-property: background-color;
+            transition-duration: 1500ms;
+            transition-delay: 500ms;
+        }
+        .delay1:hover{
+            background-color: orange;
+        }
+        /* TRANSITION UNIVERSAL */
+        .transitionUniversal {
+            /* transition-property: background-color;
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 500ms; */
+            transition: background-color 3s ease-in-out 500ms;
+        }
+        .transitionUniversal:hover{
+            background-color: yellowgreen;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Transition - property -->
+    <section>
+        <h2>Анимация набора свойств</h2>
+        <div class="transition transition1">Наведите мышю</div>
+        <div class="transition transition2">Наведите мышю</div>
+        <div class="transition transition3">Наведите мышю</div>
+    </section>
+
+    <!-- Transition - Animation -->
+    <section>
+        <h2>Функции анимации</h2>
+        <div class="transition tAnimation tAnimation1">Block 1: linear</div>
+        <div class="transition tAnimation tAnimation2">Block 2: ease</div>
+        <div class="transition tAnimation tAnimation3">Block 3: ease-in</div>
+        <div class="transition tAnimation tAnimation4">Block 4: ease-out</div>
+        <div class="transition tAnimation tAnimation5">Block 5: ease-in-out</div>
+        <div class="transition tAnimation tAnimation6">Block 6: cubic-bezier</div>
+    </section>
+
+    <!-- Transition - Delay -->
+    <section>
+        <h2>Задержка перехода</h2>
+        <div class="transition delay1">Block 1: delay(500ms)</div>
+    </section>
+
+    <!-- Transition -->
+    <section>
+        <h2>Свойство transition</h2>
+        <div class="transition transitionUniversal">Block 1: Universal<br><br><em>transition: background-color 3s ease-in-out 500ms</em></div>
+    </section>
 </body>
 </html>
