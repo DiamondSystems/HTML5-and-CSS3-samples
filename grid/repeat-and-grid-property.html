@@ -5,16 +5,75 @@
     <title>Функция repeat и свойство grid</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /*  */
+        .grid-container {
+            border: solid 2px #000;
+            display: grid;
+        }
+        .grid-repeat1 {
+            grid-template-columns: repeat(3, 8em); /* Означает = 8em 8em 8em */
+            grid-template-rows: repeat(4, 5em); /* Означает = 5em 5em 5em 5em */
+        }
+        .grid-repeat2 {
+            grid-template-columns: repeat(2, 7em 8em); /* Означает = 7em 8em 7em 8em */
+            grid-template-rows: repeat(3, 5em); /* Означает = 5em 5em 5em */
+        }
+        .grid-repeat3 {
+            grid: repeat(4, 5em) / repeat(3, 8em); /* или = 5em 5em 5em 5em / 8em 8em 8em */
+            /*
+                Это в свою очередь означает:
+                ----------------------------
+                grid-template-columns: repeat(4, 5em);
+                grid-template-rows: repeat(3, 8em);
+            */
+        }
+        .grid-item {
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.1em;
+            padding: 1.5em;
+            color: white;
+        }
+        .color1 {background-color: #675BA7;}
+        .color2 {background-color: #9BC850;}
+        .color3 {background-color: #A62E5C;}
+        .color4 {background-color: #2A9FBC;}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Grid repeat - 1 -->
     <section>
-        <h2>###</h2>
+        <h2>Grid repeat - 1</h2>
+        <div class="grid-container grid-sizes1">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+        </div>
+    </section>
+
+    <!-- Grid repeat 2 -->
+    <section>
+        <h2>Grid repeat - 2</h2>
+        <div class="grid-container grid-repeat2">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+        </div>
+    </section>
+
+    <!-- Grid repeat 3 -->
+    <section>
+        <h2>Grid repeat - 3</h2>
+        <div class="grid-container grid-repeat3">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+        </div>
     </section>
 </body>
 </html>
