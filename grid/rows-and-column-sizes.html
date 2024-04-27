@@ -5,16 +5,65 @@
     <title>Размеры строк и столбцов</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /*  */
+        .grid-container {
+            border: solid 2px #000;
+            display: grid;
+        }
+        .grid-template1 {
+            grid-template-columns: 8em auto auto;
+            grid-template-rows: auto 4.5em auto;
+        }
+        .grid-template2 {
+            height: 100vh;
+            /* Ширина второго столбца будет вычисляться по формуле: 2 * (ширина_грида - 8em) / (2 + 1) */
+            /* Ширина третьего столбца будет вычисляться по формуле: 1 * (ширина_грида - 8em) / (2 + 1) */
+            grid-template-columns: 8em 2fr 1fr;
+            /* В отношении строк все аналогично */
+            grid-template-rows: 1fr 4.5em 1fr;
+        }
+        .grid-item {
+            text-align: center;
+            font-size: 1.1em;
+            padding: 1.5em;
+            color: white;
+        }
+        .color1 {background-color: #675BA7;}
+        .color2 {background-color: #9BC850;}
+        .color3 {background-color: #A62E5C;}
+        .color4 {background-color: #2A9FBC;}
+        .color5 {background-color: #4e342e;}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Auto sizes -->
     <section>
-        <h2>###</h2>
+        <h2>Автоматические размеры</h2>
+        <div class="grid-container grid-template1">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color5">Grid Item 5</div>
+            <div class="grid-item color1">Grid Item 6</div>
+            <div class="grid-item color2">Grid Item 7</div>
+        </div>
+    </section>
+
+    <!-- Proportional sizes -->
+    <section>
+        <h2>Пропорциональные размеры</h2>
+        <div class="grid-container grid-template2">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color5">Grid Item 5</div>
+            <div class="grid-item color1">Grid Item 6</div>
+            <div class="grid-item color2">Grid Item 7</div>
+        </div>
     </section>
 </body>
 </html>
