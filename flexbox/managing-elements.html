@@ -5,16 +5,104 @@
     <title>Управление элементами. flex-basis, flex-shrink и flex-grow</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /*  */
+        .flex-container {
+            display: flex;
+            border: 1px #ccc solid;
+        }
+        .flex-item {
+            text-align: center;
+            font-size: 1em;
+            padding: 1.2em;
+            color: white;
+        }
+        .color1 {background-color: #675BA7;}
+        .color2 {background-color: #9BC850;}
+        .color3 {background-color: #A62E5C;}
+        .color4 {background-color: #2A9FBC;}
+
+        /* FLEX-BASIS */
+        .itemBasis1 {flex-basis: auto;  width: 150px;}
+        .itemBasis2 {flex-basis: auto;  width: auto;}
+        .itemBasis3 {flex-basis: 200px; width: 150px;}
+        
+        /* FLEX-SHRINK */
+        .container-size {
+            width: 400px;
+        }
+        .itemShrink1 {flex-basis: 200px; flex-shrink:1;}
+        .itemShrink2 {flex-basis: 200px; flex-shrink:2;}
+        .itemShrink3 {flex-basis: 200px; flex-shrink:3;}
+
+        /* FLEX-GROW */
+        .itemGrow1 {flex-grow:0;}
+        .itemGrow2 {flex-grow:1;}
+        .itemGrow3 {flex-grow:2;}
+
+        /* FLEX PROPERTY */
+        .itemPrpperty1 {background-color: #675BA7; width: 150px; flex: 0 0 auto;}
+        .itemPrpperty2 {background-color: #9BC850; width: 150px; flex: 1 0 auto;}
+        .itemPrpperty3 {background-color: #A62E5C; width: 150px; flex: 0 1 auto;}
+        .itemPrpperty4 {background-color: #2A9FBC; width: 150px; flex: 1 1 auto;}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- flex-basis -->
     <section>
-        <h2></h2>
+        <h2>flex-basis</h2>
+        <div class="flex-container">
+            <div class="flex-item color1 itemBasis1">Flex Item 1</div>
+            <div class="flex-item color2 itemBasis2">Flex Item 2</div>
+            <div class="flex-item color3 itemBasis3">Flex Item 3</div>
+        </div>
+    </section>
+
+    <!-- flex-shrink -->
+    <section>
+        <h2>flex-shrink</h2>
+        <div class="flex-container container-size">
+            <div class="flex-item color1 itemShrink1">Flex Item 1</div>
+            <div class="flex-item color2 itemShrink2">Flex Item 2</div>
+            <div class="flex-item color3 itemShrink3">Flex Item 3</div>
+        </div>
+    </section>
+
+    <!-- flex-grow -->
+    <section>
+        <h2>flex-grow</h2>
+        <div class="flex-container">
+            <div class="flex-item color1 itemGrow1">Flex Item 1</div>
+            <div class="flex-item color2 itemGrow2">Flex Item 2</div>
+            <div class="flex-item color3 itemGrow3">Flex Item 3</div>
+        </div>
+    </section>
+
+    <!-- flex property -->
+    <section>
+        <h2>Свойство flex</h2>
+        <h3>600px</h3>
+        <div class="flex-container" style="width: 600px;">
+            <div class="flex-item color1 itemPrpperty1">Flex Item 1</div>
+            <div class="flex-item color2 itemPrpperty2">Flex Item 2</div>
+            <div class="flex-item color3 itemPrpperty3">Flex Item 3</div>
+            <div class="flex-item color4 itemPrpperty4">Flex Item 4</div>
+        </div>
+        <h3>500px</h3>
+        <div class="flex-container" style="width: 500px;">
+            <div class="flex-item color1 itemPrpperty1">Flex Item 1</div>
+            <div class="flex-item color2 itemPrpperty2">Flex Item 2</div>
+            <div class="flex-item color3 itemPrpperty3">Flex Item 3</div>
+            <div class="flex-item color4 itemPrpperty4">Flex Item 4</div>
+        </div>
+        <h3>700px</h3>
+        <div class="flex-container" style="width: 700px;">
+            <div class="flex-item color1 itemPrpperty1">Flex Item 1</div>
+            <div class="flex-item color2 itemPrpperty2">Flex Item 2</div>
+            <div class="flex-item color3 itemPrpperty3">Flex Item 3</div>
+            <div class="flex-item color4 itemPrpperty4">Flex Item 4</div>
+        </div>
     </section>
 </body>
 </html>
