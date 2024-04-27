@@ -5,16 +5,75 @@
     <title>Строки и столбцы</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /*  */
+        .grid-container {
+            border: solid 2px #000;
+            display: grid;
+        }
+        .grid-columns {
+            grid-template-columns: 8em 8em;
+        }
+        .grid-rows {
+            grid-template-rows: 4em 7em;
+        }
+        .grid-mix {
+            grid-template-columns: 8em 8em 8em;
+            grid-template-rows: 5em 5em 5em 5em;
+        }
+        .grid-item {
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.1em;
+            padding: 1.5em;
+            color: white;
+        }
+        .color1 {background-color: #675BA7;}
+        .color2 {background-color: #9BC850;}
+        .color3 {background-color: #A62E5C;}
+        .color4 {background-color: #2A9FBC;}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- Columns -->
     <section>
-        <h2>###</h2>
+        <h2>Столбцы</h2>
+        <div class="grid-container grid-columns">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color1">Grid Item 5</div>
+        </div>
+    </section>
+
+    <!-- Rows -->
+    <section>
+        <h2>Строки</h2>
+        <div class="grid-container grid-rows">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color1">Grid Item 5</div>
+            <div class="grid-item color4">Grid Item 6</div>
+            <div class="grid-item color3">Grid Item 7</div>
+        </div>
+    </section>
+
+    <!-- Mix -->
+    <section>
+        <h2>Columns and Rows</h2>
+        <div class="grid-container grid-mix">
+            <div class="grid-item color1">Grid Item 1</div>
+            <div class="grid-item color2">Grid Item 2</div>
+            <div class="grid-item color3">Grid Item 3</div>
+            <div class="grid-item color4">Grid Item 4</div>
+            <div class="grid-item color1">Grid Item 5</div>
+            <div class="grid-item color4">Grid Item 6</div>
+            <div class="grid-item color3">Grid Item 7</div>
+        </div>
     </section>
 </body>
 </html>
