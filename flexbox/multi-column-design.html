@@ -5,16 +5,71 @@
     <title>Многоколоночный дизайн на Flexbox</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /*  */
+        body > section {
+            display: flex;
+            padding: 1em;
+            flex-direction: column;
+        }
+        .item {
+            background-color: #455a64;
+            color: #fff;
+            font-size: 1.1em;
+            padding: 1em;
+        }
+        .itemFlex1 {
+            flex: 1;
+        }
+        .itemFlex1:first-child {
+            flex: 0 0 50%;
+        }
+        .item:nth-child(1) {
+            background-color: #607d8b;
+        }
+        @media screen and (min-width: 600px) {
+            body > section {
+                flex-direction: row;
+            }
+            .item:nth-child(2) {
+                order: -1;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header><nav><a href="./../"><< Главная</a></nav></header>
-
-    <!--  -->
+    <h2>Sample 1</h2>
     <section>
-        <h2></h2>
+        <div class="item">
+            <!-- Header -->
+            <header><nav><a href="./../"><< Главная</a></nav></header>
+    
+            <h2>Что такое Lorem Ipsum?</h2>
+            <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является 
+            стандартной "рыбой" для текстов на латинице с начала XVI века...</p>
+        </div>
+        <div class="item">
+            <h2>Откуда он появился?</h2>
+            <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. 
+            Его корни уходят в один фрагмент классической латыни 45 года н.э...</p>
+        </div>
+    </section>
+
+    <h2>Sample 2</h2>
+    <section>
+        <div class="item itemFlex1">
+            <h1>Что такое Lorem Ipsum?</h1>
+            <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" 
+            для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал ...</p>
+        </div>
+        <div class="item itemFlex1">
+            <h3>Классический текст Lorem Ipsum, используемый с XVI века</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+        </div>
+        <div class="item itemFlex1">
+            <h3>Где его взять?</h3>
+            <p>Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, 
+            юмористические вставки или слова, которые даже отдалённо не напоминают латынь.</p>
+        </div>
     </section>
 </body>
 </html>
