@@ -5,16 +5,54 @@
     <title>Макет страницы в Grid Layout</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /*  */
+        .grid-container {
+            height:100vh;
+            display: grid;
+            grid-template-areas: "header"
+                                    "."
+                                    "menu"
+                                    "."
+                                    "content"
+                                    "."
+                                    "sidebar"
+                                    "."
+                                    "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px 5px 80px 5px 1fr 5px 80px 5px 80px;
+        }
+        .header { grid-area: header; background-color: #bbb; }
+        .menu { grid-area: menu; background-color: #ccc; }
+        .sidebar { grid-area: sidebar; background-color: #ccc; }
+        .content { grid-area: content; background-color: #eee; }
+        .footer { grid-area: footer; background-color: #bbb; }
+        h3{ 
+            text-align:center;
+        }
+        @media screen and (min-width: 600px) {
+            .grid-container {
+                height:100vh;
+                display: grid;
+                grid-template-areas: "header header header header header"
+                                        ". . . . ."
+                                        "menu . content . sidebar"
+                                        ". . . . ."
+                                        "footer footer footer footer footer";
+                grid-template-columns: 130px 5px 1fr 5px 130px;
+                grid-template-rows: 90px 5px 1fr 5px 90px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
-    <section>
-        <h2>###</h2>
-    </section>
+    <div class="grid-container">
+        <div class="header"><h3>Header</h3></div>
+        <div class="content"><h3>Content</h3></div>
+        <div class="menu"><h3>Menu</h3></div>
+        <div class="sidebar"><h3>Sidebar</h3></div>
+        <div class="footer"><h3>Footer</h3></div>
+    </div>
 </body>
 </html>
