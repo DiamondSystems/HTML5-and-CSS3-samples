@@ -5,16 +5,57 @@
     <title>Области грида</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /*  */
+        .grid-container {
+            height: 100vh;
+            display: grid;
+            grid-template-areas: "header header"
+                                 "sidebar content"
+                                 "sidebar content";
+            grid-template-columns: 150px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+        }
+        .grid-container-site {
+            height: 100vh;
+            display: grid;
+            grid-template-areas: "header header header header header"
+                                 ". . . . ."
+                                 "menu . content . sidebar"
+                                 ". . . . ."
+                                 "footer footer footer footer footer";
+            grid-template-columns: 130px 5px 1fr 5px 130px;
+            grid-template-rows: 90px 5px 1fr 5px 90px;
+        }
+        .header { grid-area: header; background-color: #bbb; }
+        .menu { grid-area: menu; background-color: #ccc; }
+        .sidebar { grid-area: sidebar; background-color: #ccc; }
+        .content { grid-area: content; background-color: #eee; }
+        .footer { grid-area: footer; background-color: #bbb; }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header><nav><a href="./../"><< Главная</a></nav></header>
 
-    <!--  -->
+    <!-- grid-template-area -->
     <section>
-        <h2>###</h2>
+        <h2>grid-template-area</h2>
+        <div class="grid-container">
+            <div class="header"></div>
+            <div class="sidebar"></div>
+            <div class="content"></div>
+        </div>
+    </section>
+
+    <!-- example site -->
+    <section>
+        <h2>example site</h2>
+        <div class="grid-container grid-container-site">
+            <div class="header"></div>
+            <div class="content"></div>
+            <div class="menu"></div>
+            <div class="sidebar"></div>
+            <div class="footer"></div>
+        </div>
     </section>
 </body>
 </html>
